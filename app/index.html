@@ -84,6 +84,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                         <span>Users</span>
                     </a>
 
+                    <a data-route="users" href="/package" on-click="onDataRouteClick">
+                        <iron-icon icon="info"></iron-icon>
+                        <span>Purple Package Picker</span>
+                    </a>
+
                     <a data-route="contact" href="/contact" on-click="onDataRouteClick">
                         <iron-icon icon="mail"></iron-icon>
                         <span>Contact</span>
@@ -124,6 +129,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="content">
                     <iron-pages attr-for-selected="data-route" selected="{{route}}">
 
+                        <!-- Home Page Content -->
                         <section data-route="home">
                             <paper-material elevation="1">
                                 <my-greeting></my-greeting>
@@ -143,6 +149,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                         </section>
 
+                        <!-- Users Page Content -->
                         <section data-route="users">
                             <paper-material elevation="1">
                                 <h2 class="page-title">Users</h2>
@@ -160,6 +167,46 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </paper-material>
                         </section>
 
+                        <!-- Package Page Content -->
+                        <section data-route="package">
+                            <paper-material elevation="1">
+                                <h2 class="page-title">Purple Package Picker</h2>
+                                
+<!--
+                                <paper-menu-button>
+                                    <paper-icon-button icon="menu" class="dropdown-trigger"></paper-icon-button>
+                                        <paper-menu class="dropdown-content">
+                                        <paper-item>Share</paper-item>
+                                        <paper-item>Settings</paper-item>
+                                        <paper-item>Help</paper-item>
+                                    </paper-menu>
+                                </paper-menu-button>
+-->
+                                <h3>Phase 1: Identifying Information</h3>
+                                <hr>
+                                <form is="iron-form" id="form" method="post" action="/form/handler">
+                                    <h4>Information about you:</h4>
+                                    <paper-input name="yourName" label="Your Name"></paper-input>
+                                    <br />
+                                    <h4>That's quite enough about you. Now, about the recipient...</h4>
+                                    <paper-input name="recipientName" label="Recipient's Name"></paper-input>
+                                    
+                                    <h4>And their favorite...</h4>
+                                    <br />
+                                    <!-- Color reference: https://en.wikipedia.org/wiki/Web_colors -->
+                                    <color-picker colorlist='["Pink", "Red", "Orange", "Yellow", "Brown", "Green", "Cyan", "Blue", "Purple", "Tint"]'></color-picker>
+                                    <paper-button class="help-button">How should I know?</paper-button>
+                                    
+                                    
+                                    <paper-input name="recipientFlower" label="Flower"></paper-input>
+                                    <paper-input name="recipientOtherThings" label="Other Things"></paper-input>
+                                </form>
+                                
+                                
+                            </paper-material>
+                        </section>
+
+                        <!-- Contact Page Content -->
                         <section data-route="contact">
                             <paper-material elevation="1">
                                 <h2 class="page-title">Contact</h2>
@@ -167,6 +214,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </paper-material>
                         </section>
 
+                        <!-- Colors Page Content -->
                         <section data-route="colors">
                             <paper-material elevation="1">
                                 <h2 class="page-title">Color Picker</h2>
